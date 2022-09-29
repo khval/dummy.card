@@ -30,7 +30,7 @@
 *      FindCard -- Description
 *
 *   SYNOPSIS
-*      BOOL FindCard(struct boardinfo * bi);
+*      BOOL FindCard(struct BoardInfo * bi);
 *
 *   FUNCTION
 *
@@ -52,8 +52,8 @@
 *
 */
 
-BOOL _dummy_chip_FindCard(struct dummy_chipIFace *Self,
-       struct boardinfo * bi)
+BOOL _dummy_chip_FindCard(struct DummyChipIFace *Self,
+       struct BoardInfo * bi)
 {
   return FindCard(bi);
 }

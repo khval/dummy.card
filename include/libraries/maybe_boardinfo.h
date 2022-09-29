@@ -2,23 +2,31 @@
 #ifndef boardinfo_h
 #define boardinfo_h
 
-#ifdef _GNUC_
-	#ifdef __PPC__
-	#pragma pack(2)
-	#endif
-#elif define(__VBCC__)
-	#pragma amiga-align
+#ifdef __GNUC__
+   #ifdef __PPC__
+    #pragma pack(2)
+   #endif
+#elif defined(__VBCC__)
+   #pragma amiga-align
 #endif
+
+enum {
+	PLANAR,
+	CHUNKY,
+	HICOLOR,
+	TRUECOLOR,
+	TRUEALHA,
+	MAXMODES
+};
 
 struct BoardInfo
 {
-	APTR RegisterBase;
 	APTR RegisterBase;
 	APTR MemoryBase;
 	APTR MemoryIOBase;
 	uint32 MemorySize;
 	const char *BoardName;
-	char VBIName[32]
+	char VBIName[32];
 	APTR CardBase;
 	APTR ChipBase;
 	APTR ExecBase;
@@ -148,16 +156,16 @@ struct BoardInfo
 	uint32 DoubleBufferList;
 	uint32 SyncTime;
 	uint8 SyncPeriod[8];
-	uint8 SyncPeriod[34];
+	uint8 SoftVBlankPort[26];
 	uint8 WaitQ[12];
-}
+};
 
 #ifdef __GNUC__
-	#ifdef __PPC__
-	#pragma pack()
-	#endif
+   #ifdef __PPC__
+    #pragma pack()
+   #endif
 #elif defined(__VBCC__)
-	#pragma default-align
+   #pragma default-align
 #endif
 
 #endif

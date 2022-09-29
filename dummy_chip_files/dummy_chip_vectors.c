@@ -3,7 +3,7 @@
 
 #include "dummy_chip_vectors.h"
 
-STATIC uint32 VARARGS68K _dummy_chip_UNIMPLEMENTED(struct dummy_chipIFace *iface UNUSED)
+STATIC uint32 VARARGS68K _dummy_chip_UNIMPLEMENTED(struct DummyChipIFace *iface UNUSED)
 {
   return 0;
 }

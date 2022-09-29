@@ -51,7 +51,7 @@
 *
 */
 
-ULONG _dummy_chip_Obtain(struct dummy_chipIFace *Self)
+ULONG _dummy_chip_Obtain(struct DummyChipIFace *Self)
 {
   return Obtain();
 }

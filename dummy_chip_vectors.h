@@ -19,12 +19,15 @@
 #ifndef LIBRARIES_DUMMY_CHIP_H
 #include <libraries/dummy_chip.h>
 #endif
+#ifndef LIBRARIES_MAYBE_BOARDINFO_H
+#include <libraries/maybe_boardinfo.h>
+#endif
 
 /* forward declaration */
-struct dummy_chipIFace;
+struct DummyChipIFace;
 
-extern ULONG                VARARGS68K _dummy_chip_Obtain(struct dummy_chipIFace *);
-extern ULONG                VARARGS68K _dummy_chip_Release(struct dummy_chipIFace *);
-extern BOOL                 VARARGS68K _dummy_chip_FindCard(struct dummy_chipIFace *, struct boardinfo * bi);
-extern void                 VARARGS68K _dummy_chip_InitCard(struct dummy_chipIFace *, struct boardinfo * bi, char ** ToolTypes);
-extern BOOL                 VARARGS68K _dummy_chip_InitChip(struct dummy_chipIFace *, struct boardinfo * bi);
+extern ULONG                VARARGS68K _dummy_chip_Obtain(struct DummyChipIFace *);
+extern ULONG                VARARGS68K _dummy_chip_Release(struct DummyChipIFace *);
+extern BOOL                 VARARGS68K _dummy_chip_FindCard(struct DummyChipIFace *, struct BoardInfo * bi);
+extern void                 VARARGS68K _dummy_chip_InitCard(struct DummyChipIFace *, struct BoardInfo * bi, char ** ToolTypes);
+extern BOOL                 VARARGS68K _dummy_chip_InitChip(struct DummyChipIFace *, struct BoardInfo * bi);

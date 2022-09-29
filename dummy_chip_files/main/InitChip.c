@@ -30,7 +30,7 @@
 *      InitChip -- Description
 *
 *   SYNOPSIS
-*      BOOL InitChip(struct boardinfo * bi);
+*      BOOL InitChip(struct BoardInfo * bi);
 *
 *   FUNCTION
 *
@@ -52,8 +52,8 @@
 *
 */
 
-BOOL _dummy_chip_InitChip(struct dummy_chipIFace *Self,
-       struct boardinfo * bi)
+BOOL _dummy_chip_InitChip(struct DummyChipIFace *Self,
+       struct BoardInfo * bi)
 {
   return InitChip(bi);
 }

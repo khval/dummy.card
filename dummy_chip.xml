@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE library SYSTEM "library.dtd">
-<library name="dummy.chip" basename="DummyChipBase" openname="dummy.chip">
+<library name="dummy_chip" basename="DummyChipBase" openname="dummy.chip">
 	<include>exec/types.h</include>
 	<include>proto/exec.h</include>
 	<include>proto/dos.h</include>
 	<include>libraries/dummy_chip.h</include>
+	<include>libraries/maybe_boardinfo.h</include>
 	<interface name="main" version="1.0" struct="DummyChipIFace" prefix="_dummy_chip_" asmprefix="IDummyChip" global="IDummyChip">
 		<method name="Obtain" result="ULONG"/>
 		<method name="Release" result="ULONG"/>

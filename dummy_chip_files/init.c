@@ -1,10 +1,10 @@
 /* :ts=4
- *  $VER: init.c $Revision$ (29-Sep-2022)
+ *  $VER: FindCard.c $Revision$ (29-Sep-2022)
  *
  *  This file is part of dummy_chip.
  *
- *  Copyright (c) 2022 Hyperion Entertainment CVBA.
- *  All Rights Reserved.
+ *  Copyright (c) 2022 LiveForIt Software.
+ *  LGPL.
  *
  * $Id$
  *
@@ -21,6 +21,7 @@
 #include <proto/exec.h>
 #include <proto/dos.h>
 #include <libraries/dummy_chip.h>
+#include <libraries/maybe_boardinfo.h>
 #include <proto/dummy_chip.h>
 #include <stdarg.h>
 
@@ -28,7 +29,7 @@
 #include "dummy_chip.library_rev.h"
 STATIC CONST UBYTE USED verstag[] = VERSTAG;
 
-struct 
+struct _library
 {
     struct Library libNode;
     BPTR segList;
@@ -58,7 +59,7 @@ int32 _start(void)
 /* Open the library */
 STATIC struct Library *libOpen(struct LibraryManagerInterface *Self, ULONG version)
 {
-    struct  *libBase = (struct  *)Self->Data.LibBase; 
+    struct  _library *libBase = (struct  _library *) Self->Data.LibBase; 
 
     if (version > VERSION)
     {
@@ -79,7 +80,7 @@ STATIC struct Library *libOpen(struct LibraryManagerInterface *Self, ULONG versi
 /* Close the library */
 STATIC APTR libClose(struct LibraryManagerInterface *Self)
 {
-    struct  *libBase = (struct  *)Self->Data.LibBase;
+    struct  _library *libBase = (struct  _library *)Self->Data.LibBase;
     /* Make sure to undo what open did */
 
 
@@ -97,7 +98,7 @@ STATIC APTR libExpunge(struct LibraryManagerInterface *Self)
     struct ExecIFace *IExec
         = (struct ExecIFace *)(*(struct ExecBase **)4)->MainInterface;
     APTR result = (APTR)0;
-    struct  *libBase = (struct  *)Self->Data.LibBase;
+    struct  _library *libBase = (struct  _library *)Self->Data.LibBase;
     if (libBase->libNode.lib_OpenCnt == 0)
     {
        result = (APTR)libBase->segList;
@@ -117,7 +118,7 @@ STATIC APTR libExpunge(struct LibraryManagerInterface *Self)
 /* The ROMTAG Init Function */
 STATIC struct Library *libInit(struct Library *LibraryBase, APTR seglist, struct Interface *exec)
 {
-    struct  *libBase = (struct  *)LibraryBase;
+    struct  _library *libBase = (struct  _library *)LibraryBase;
     struct ExecIFace *IExec UNUSED = (struct ExecIFace *)exec;
 
     libBase->libNode.lib_Node.ln_Type = NT_LIBRARY;
@@ -223,7 +224,7 @@ STATIC CONST CONST_APTR libInterfaces[] =
 
 STATIC CONST struct TagItem libCreateTags[] =
 {
-	{ CLT_DataSize,		sizeof(struct )	},
+	{ CLT_DataSize,		sizeof(struct _library)	},
 	{ CLT_InitFunc,		(Tag)libInit			},
 	{ CLT_Interfaces,	(Tag)libInterfaces		},
 	/* Uncomment the following line if you have a 68k jump table */

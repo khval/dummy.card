@@ -51,7 +51,7 @@
 *
 */
 
-ULONG _dummy_chip_Release(struct dummy_chipIFace *Self)
+ULONG _dummy_chip_Release(struct DummyChipIFace *Self)
 {
   return Release();
 }

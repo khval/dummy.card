@@ -30,7 +30,7 @@
 *      InitCard -- Description
 *
 *   SYNOPSIS
-*      void InitCard(struct boardinfo * bi, char ** ToolTypes);
+*      void InitCard(struct BoardInfo * bi, char ** ToolTypes);
 *
 *   FUNCTION
 *
@@ -53,8 +53,8 @@
 *
 */
 
-void _dummy_chip_InitCard(struct dummy_chipIFace *Self,
-       struct boardinfo * bi,
+void _dummy_chip_InitCard(struct DummyChipIFace *Self,
+       struct BoardInfo * bi,
        char ** ToolTypes)
 {
   InitCard(bi, ToolTypes);

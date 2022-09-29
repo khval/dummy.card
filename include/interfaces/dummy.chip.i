@@ -1,5 +1,5 @@
-#ifndef DUMMY_CHIP_INTERFACE_DEF_H
-#define DUMMY_CHIP_INTERFACE_DEF_H
+#ifndef DUMMY.CHIP_INTERFACE_DEF_H
+#define DUMMY.CHIP_INTERFACE_DEF_H
 /*
 ** This file is machine generated from idltool
 ** Do not edit

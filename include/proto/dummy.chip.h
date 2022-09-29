@@ -1,5 +1,5 @@
-#ifndef PROTO_DUMMY_CHIP_H
-#define PROTO_DUMMY_CHIP_H
+#ifndef PROTO_DUMMY.CHIP_H
+#define PROTO_DUMMY.CHIP_H
 
 /*
 **	$Id$
@@ -22,9 +22,6 @@
 #ifndef LIBRARIES_DUMMY_CHIP_H
 #include <libraries/dummy_chip.h>
 #endif
-#ifndef LIBRARIES_MAYBE_BOARDINFO_H
-#include <libraries/maybe_boardinfo.h>
-#endif
 
 /****************************************************************************/
 
@@ -39,13 +36,13 @@
 /****************************************************************************/
 
 #ifdef __amigaos4__
- #include <interfaces/dummy_chip.h>
+ #include <interfaces/dummy.chip.h>
  #ifdef __USE_INLINE__
-  #include <inline4/dummy_chip.h>
+  #include <inline4/dummy.chip.h>
  #endif /* __USE_INLINE__ */
- #ifndef CLIB_DUMMY_CHIP_PROTOS_H
-  #define CLIB_DUMMY_CHIP_PROTOS_H 1
- #endif /* CLIB_DUMMY_CHIP_PROTOS_H */
+ #ifndef CLIB_DUMMY.CHIP_PROTOS_H
+  #define CLIB_DUMMY.CHIP_PROTOS_H 1
+ #endif /* CLIB_DUMMY.CHIP_PROTOS_H */
  #ifndef __NOGLOBALIFACE__
   #if defined(__cplusplus) && defined(__USE_AMIGAOS_NAMESPACE__)
    extern struct AmigaOS::DummyChipIFace * IDummyChip;
@@ -54,24 +51,24 @@
   #endif
  #endif /* __NOGLOBALIFACE__ */
 #else /* __amigaos4__ */
- #ifndef CLIB_DUMMY_CHIP_PROTOS_H
-  #include <clib/dummy_chip_protos.h>
- #endif /* CLIB_DUMMY_CHIP_PROTOS_H */
+ #ifndef CLIB_DUMMY.CHIP_PROTOS_H
+  #include <clib/dummy.chip_protos.h>
+ #endif /* CLIB_DUMMY.CHIP_PROTOS_H */
  #if defined(__GNUC__)
   #ifndef __PPC__
-   #include <inline/dummy_chip.h>
+   #include <inline/dummy.chip.h>
   #else /* __PPC__ */
-   #include <ppcinline/dummy_chip.h>
+   #include <ppcinline/dummy.chip.h>
   #endif /* __PPC__ */
  #elif defined(__VBCC__)
   #ifndef __PPC__
-   #include <inline/dummy_chip_protos.h>
+   #include <inline/dummy.chip_protos.h>
   #endif /* __PPC__ */
  #else /* __GNUC__ */
-  #include <pragmas/dummy_chip_pragmas.h>
+  #include <pragmas/dummy.chip_pragmas.h>
  #endif /* __GNUC__ */
 #endif /* __amigaos4__ */
 
 /****************************************************************************/
 
-#endif /* PROTO_DUMMY_CHIP_H */
+#endif /* PROTO_DUMMY.CHIP_H */
