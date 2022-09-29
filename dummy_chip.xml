@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE library SYSTEM "library.dtd">
-<library name="dummy_chip" basename="dummy_chipBase" openname="dummy.chip">
+<library name="dummy.chip" basename="DummyChipBase" openname="dummy.chip">
 	<include>exec/types.h</include>
 	<include>proto/exec.h</include>
 	<include>proto/dos.h</include>
 	<include>libraries/dummy_chip.h</include>
-	<interface name="main" version="1.0" struct="dummy_chipIFace" prefix="_dummy_chip_" asmprefix="Idummy_chip" global="Idummy_chip">
+	<interface name="main" version="1.0" struct="DummyChipIFace" prefix="_dummy_chip_" asmprefix="IDummyChip" global="IDummyChip">
 		<method name="Obtain" result="ULONG"/>
 		<method name="Release" result="ULONG"/>
 		<method name="Expunge" result="void" status="unimplemented"/>
 		<method name="Clone" result="struct Interface *" status="unimplemented"/>
 		<method name="FindCard" result="BOOL">
-			<arg name="bi" type="struct boardinfo *"/>
+			<arg name="bi" type="struct BoardInfo *"/>
 		</method>
 		<method name="InitCard" result="void">
-			<arg name="bi" type="struct boardinfo *"/>
+			<arg name="bi" type="struct BoardInfo *"/>
 			<arg name="ToolTypes" type="char **"/>
 		</method>
 		<method name="InitChip" result="BOOL">
-			<arg name="bi" type="struct boardinfo *"/>
+			<arg name="bi" type="struct BoardInfo *"/>
 		</method>
 	</interface>
 </library>
