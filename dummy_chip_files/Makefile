@@ -34,7 +34,8 @@ VERSION = 53
 
 # "main" Interface Source Files
 main_SRCS = main/Obtain.c main/Release.c main/FindCard.c main/InitCard.c \
-    main/InitChip.c 
+    main/InitChip.c \
+    functions.c
 
 # -------------------------------------------------------------
 # Nothing should need changing below this line
