@@ -56,34 +56,34 @@
 
 typedef enum
 {
-	BT_NoBoard,
-	BT_oMniBus,
-	BT_Graffity,
-	BT_CyberVision,
-	BT_Domino,
-	BT_Merlin,
-	BT_PicassoII,
-	BT_Piccolo,
-	BT_RetinaBLT,
-	BT_Spectrum,
-	BT_PicassoIV,
-	BT_PiccoloSD64,
-	BT_A2410,
-	BT_Pixel64,
-	BT_uaegfx, // 14
-	BT_CVision3D,
-	BT_Altais,
-	BT_Prometheus,
-	BT_Mediator,
-	BT_powerfb,
-	BT_powerpci,
-	BT_CVisionPPC,
-	BT_GREX,
-	BT_Prototype7,
-	BT_Reserved,
-	BT_Reserved2,
-	BT_MNT_VA2000,
-	BT_MNT_ZZ9000,
+	BT_NoBoard, 
+	BT_oMniBus, 
+	BT_Graffity, 
+	BT_CyberVision, 
+	BT_Domino, 
+	BT_Merlin, 
+	BT_PicassoII, 
+	BT_Piccolo, 
+	BT_RetinaBLT, 
+	BT_Spectrum, 
+	BT_PicassoIV, 
+	BT_PiccoloSD64, 
+	BT_A2410, 
+	BT_Pixel64, 
+	BT_uaegfx,  // 14
+	BT_CVision3D, 
+	BT_Altais, 
+	BT_Prometheus, 
+	BT_Mediator, 
+	BT_powerfb, 
+	BT_powerpci, 
+	BT_CVisionPPC, 
+	BT_GREX, 
+	BT_Prototype7, 
+	BT_Reserved, 
+	BT_Reserved2, 
+	BT_MNT_VA2000, 
+	BT_MNT_ZZ9000, 
 	BT_MaxBoardTypes
 } BTYPE;
 
@@ -92,26 +92,26 @@ typedef enum
  */
 typedef enum
 {
-	PCT_Unknown,
-	PCT_S11483, // Sierra S11483: HiColor 15 bit, oMniBus, Domino
-	PCT_S15025, // Sierra S15025: TrueColor 32 bit, oMniBus
-	PCT_CirrusGD542x, // Cirrus GD542x internal: TrueColor 24 bit
-	PCT_Domino, // is in fact a Sierra S11483
-	PCT_BT482, // BrookTree BT482: TrueColor 32 bit, Merlin
-	PCT_Music, // Music MU9C4910: TrueColor 24 bit, oMniBus
-	PCT_ICS5300, // ICS 5300: ...., Retina BLT Z3
-	PCT_CirrusGD5446, // Cirrus GD5446 internal: TrueColor 24 bit
-	PCT_CirrusGD5434, // Cirrus GD5434 internal: TrueColor 32 bit
-	PCT_S3Trio64, // S3 Trio64 internal: TrueColor 32 bit
-	PCT_A2410_xxx, // A2410 DAC, *type unknown*
-	PCT_S3ViRGE, // S3 ViRGE internal: TrueColor 32 bit
-	PCT_3dfxVoodoo, // 3dfx Voodoo internal
-	PCT_TIPermedia2, // TexasInstruments TVP4020 Permedia2 internal
-	PCT_ATIRV100, // ATI Technologies Radeon/Radeon 7000 internal
-	PCT_reserved,
-	PCT_reserved2,
-	PCT_MNT_VA2000,
-	PCT_MNT_ZZ9000,
+	PCT_Unknown, 
+	PCT_S11483,  // Sierra S11483: HiColor 15 bit,  oMniBus,  Domino
+	PCT_S15025,  // Sierra S15025: TrueColor 32 bit,  oMniBus
+	PCT_CirrusGD542x,  // Cirrus GD542x internal: TrueColor 24 bit
+	PCT_Domino,  // is in fact a Sierra S11483
+	PCT_BT482,  // BrookTree BT482: TrueColor 32 bit,  Merlin
+	PCT_Music,  // Music MU9C4910: TrueColor 24 bit,  oMniBus
+	PCT_ICS5300,  // ICS 5300: ....,  Retina BLT Z3
+	PCT_CirrusGD5446,  // Cirrus GD5446 internal: TrueColor 24 bit
+	PCT_CirrusGD5434,  // Cirrus GD5434 internal: TrueColor 32 bit
+	PCT_S3Trio64,  // S3 Trio64 internal: TrueColor 32 bit
+	PCT_A2410_xxx,  // A2410 DAC,  *type unknown*
+	PCT_S3ViRGE,  // S3 ViRGE internal: TrueColor 32 bit
+	PCT_3dfxVoodoo,  // 3dfx Voodoo internal
+	PCT_TIPermedia2,  // TexasInstruments TVP4020 Permedia2 internal
+	PCT_ATIRV100,  // ATI Technologies Radeon/Radeon 7000 internal
+	PCT_reserved, 
+	PCT_reserved2, 
+	PCT_MNT_VA2000, 
+	PCT_MNT_ZZ9000, 
 	PCT_MaxPaletteChipTypes
 } PCTYPE;
 
@@ -120,23 +120,23 @@ typedef enum
  */
 typedef enum
 {
-	GCT_Unknown,
-	GCT_ET4000,
-	GCT_ETW32, 
-	GCT_CirrusGD542x,
-	GCT_NCR77C32BLT, 
-	GCT_CirrusGD5446,
-	GCT_CirrusGD5434,
-	GCT_S3Trio64,
-	GCT_TI34010,
-	GCT_S3ViRGE,
-	GCT_3dfxVoodoo,
-	GCT_TIPermedia2,
-	GCT_ATIRV100,
-	GCT_reserved,
-	GCT_reserved2,
-	GCT_MNT_VA2000,
-	GCT_MNT_ZZ9000,
+	GCT_Unknown, 
+	GCT_ET4000, 
+	GCT_ETW32,  
+	GCT_CirrusGD542x, 
+	GCT_NCR77C32BLT,  
+	GCT_CirrusGD5446, 
+	GCT_CirrusGD5434, 
+	GCT_S3Trio64, 
+	GCT_TI34010, 
+	GCT_S3ViRGE, 
+	GCT_3dfxVoodoo, 
+	GCT_TIPermedia2, 
+	GCT_ATIRV100, 
+	GCT_reserved, 
+	GCT_reserved2, 
+	GCT_MNT_VA2000, 
+	GCT_MNT_ZZ9000, 
 	GCT_MaxGraphicsControllerTypes
 } GCTYPE;
 
@@ -152,9 +152,9 @@ typedef enum
 
 enum
 {
-	DPMS_ON, /* Full operation */
-	DPMS_STANDBY, /* Optional state of minimal power reduction */
-	DPMS_SUSPEND, /* Significant reduction of power consumption */
+	DPMS_ON,  /* Full operation */
+	DPMS_STANDBY,  /* Optional state of minimal power reduction */
+	DPMS_SUSPEND,  /* Significant reduction of power consumption */
 	DPMS_OFF /* Lowest level of power consumption */
 };
 
@@ -200,9 +200,9 @@ struct Template
 struct Pattern
 {
 	APTR Memory;
-	UWORD XOffset, YOffset;
-	ULONG FgPen, BgPen;
-	UBYTE Size;  // Width: 16, Height: (1<<pat_Size)
+	UWORD XOffset,  YOffset;
+	ULONG FgPen,  BgPen;
+	UBYTE Size;  // Width: 16,  Height: (1<<pat_Size)
 	UBYTE DrawMode;
 };
 
@@ -210,17 +210,17 @@ struct Pattern
 
 struct Line
 {
-	WORD X, Y;
+	WORD X,  Y;
 	UWORD Length;
-	WORD dX, dY;
-	WORD sDelta, lDelta, twoSDminusLD;
+	WORD dX,  dY;
+	WORD sDelta,  lDelta,  twoSDminusLD;
 	UWORD LinePtrn;
 	UWORD PatternShift;
-	ULONG FgPen, BgPen;
+	ULONG FgPen,  BgPen;
 	BOOL Horizontal;
 	UBYTE DrawMode;
 	BYTE pad;
-	UWORD Xorigin, Yorigin;
+	UWORD Xorigin,  Yorigin;
 };
 
 /************************************************************************/
@@ -234,10 +234,10 @@ struct BitMapExtra
 	struct BoardInfo *BoardInfo;
 	APTR MemChunk;
 	struct RenderInfo RenderInfo;
-	UWORD Width, Height;
+	UWORD Width,  Height;
 	UWORD Flags;
 	// NEW !!!
-	WORD BaseLevel, CurrentLevel;
+	WORD BaseLevel,  CurrentLevel;
 	struct BitMapExtra *CompanionMaster;
 };
 
@@ -263,7 +263,7 @@ struct SpecialFeature
 
 enum
 {
-	SFT_INVALID, SFT_FLICKERFIXER, SFT_VIDEOCAPTURE, SFT_VIDEOWINDOW, SFT_MEMORYWINDOW
+	SFT_INVALID,  SFT_FLICKERFIXER,  SFT_VIDEOCAPTURE,  SFT_VIDEOWINDOW,  SFT_MEMORYWINDOW
 };
 
 #define FA_Restore  (TAG_USER+0) /* becomes visible again */
@@ -336,8 +336,8 @@ enum
 #define ABMA_System  (TAG_USER+22)
 /*
  * THOR: New for V45 Gfx/Intuiton
- * "by accident", this is identically to SA_DisplayID of intuition
- * resp. SA_Behind, SA_Colors, SA_Colors32
+ * "by accident",  this is identically to SA_DisplayID of intuition
+ * resp. SA_Behind,  SA_Colors,  SA_Colors32
  */
 #define ABMA_DisplayID  (TAG_USER + 32 + 0x12)
 #define ABMA_BitmapInvisible (TAG_USER + 32 + 0x17)
@@ -362,9 +362,9 @@ enum
 
 struct BoardInfo
 {
-		UBYTE  *RegisterBase, *MemoryBase, *MemoryIOBase;
+		UBYTE  *RegisterBase,  *MemoryBase,  *MemoryIOBase;
 		ULONG  MemorySize;
-		char  *BoardName,VBIName[32];
+		char  *BoardName, VBIName[32];
 		struct CardBase  *CardBase;
 		struct ChipBase  *ChipBase;
 		struct ExecBase  *ExecBase;
@@ -380,85 +380,85 @@ struct BoardInfo
 		UWORD  BitsPerCannon;
 		ULONG  Flags;
 		UWORD  SoftSpriteFlags;
-		UWORD  ChipFlags;  // private, chip specific, not touched by RTG
-		ULONG  CardFlags;  // private, card specific, not touched by RTG
+		UWORD  ChipFlags;  // private,  chip specific,  not touched by RTG
+		ULONG  CardFlags;  // private,  card specific,  not touched by RTG
 		UWORD  BoardNum;  // set by rtg.library
 		UWORD  RGBFormats;
 		UWORD  MaxHorValue[MAXMODES];
 		UWORD  MaxVerValue[MAXMODES];
 		UWORD  MaxHorResolution[MAXMODES];
 		UWORD  MaxVerResolution[MAXMODES];
-		ULONG  MaxMemorySize, MaxChunkSize;
+		ULONG  MaxMemorySize,  MaxChunkSize;
 		ULONG  MemoryClock;
 		ULONG  PixelClockCount[MAXMODES];
-		APTR (*AllocCardMem)( (struct BoardInfo *bi), (ULONG size), (BOOL force), (BOOL system));
-		BOOL (*FreeCardMem)( (struct BoardInfo *bi), (APTR membase));
-		BOOL (*SetSwitch)( (struct BoardInfo *), (BOOL));
-		void (*SetColorArray)( (struct BoardInfo *), (UWORD), (UWORD));
-		void (*SetDAC)( (struct BoardInfo *), (RGBFTYPE));
-		void (*SetGC)( (struct BoardInfo *), (struct ModeInfo *), (BOOL));
-		void (*SetPanning)( (struct BoardInfo *), (UBYTE *), (UWORD), (WORD), (WORD), (RGBFTYPE));
-		UWORD (*CalculateBytesPerRow)( (struct BoardInfo *), (UWORD), (RGBFTYPE));
-		APTR (*CalculateMemory)( (struct BoardInfo *), (APTR), (RGBFTYPE));
-		ULONG (*GetCompatibleFormats)( (struct BoardInfo *), (RGBFTYPE));
-		BOOL (*SetDisplay)( (struct BoardInfo *), (BOOL));
-		LONG (*ResolvePixelClock)( (struct BoardInfo *), (struct ModeInfo *), (ULONG), (RGBFTYPE));
-		ULONG (*GetPixelClock)( (struct BoardInfo *bi), (struct ModeInfo *), (ULONG), (RGBFTYPE));
-		void (*SetClock)( (struct BoardInfo *));
-		void (*SetMemoryMode)( (struct BoardInfo *), (RGBFTYPE));
-		void (*SetWriteMask)( (struct BoardInfo *), (UBYTE));
-		void (*SetClearMask)( (struct BoardInfo *), (UBYTE));
-		void (*SetReadPlane)( (struct BoardInfo *), (UBYTE));
-		void (*WaitVerticalSync)( (struct BoardInfo *), (BOOL));
-		BOOL (*SetInterrupt)( (struct BoardInfo *), (BOOL));
-		void (*WaitBlitter)( (struct BoardInfo *));
-		void (*ScrollPlanar)( (struct BoardInfo *), (struct RenderInfo *), (UWORD), (UWORD), (UWORD), (UWORD), __REGD4(UWORD), __REGD5(UWORD), __REGD6(UBYTE));
-		void (*ScrollPlanarDefault)( (struct BoardInfo *), (struct RenderInfo *), (UWORD), (UWORD), (UWORD), (UWORD), __REGD4(UWORD), __REGD5(UWORD), __REGD6(UBYTE));
-		void (*UpdatePlanar)( (struct BoardInfo *), (struct BitMap *), (struct RenderInfo *), (SHORT), (SHORT), (SHORT), (SHORT), __REGD4(UBYTE));
-		void (*UpdatePlanarDefault)( (struct BoardInfo *), (struct BitMap *), (struct RenderInfo *), (SHORT), (SHORT), (SHORT), (SHORT), __REGD4(UBYTE));
-		void (*BlitPlanar2Chunky)( (struct BoardInfo *), (struct BitMap *), (struct RenderInfo *), (SHORT), (SHORT), (SHORT), (SHORT), __REGD4(SHORT), __REGD5(SHORT), __REGD6(UBYTE), (UBYTE));
-		void (*BlitPlanar2ChunkyDefault)( (struct BoardInfo *), (struct BitMap *), (struct RenderInfo *), (SHORT), (SHORT), (SHORT), (SHORT), __REGD4(SHORT), __REGD5(SHORT), __REGD6(UBYTE), (UBYTE));
-		void (*FillRect)( (struct BoardInfo *), (struct RenderInfo *), (WORD), (WORD), (WORD), (WORD), __REGD4(ULONG), __REGD5(UBYTE), (RGBFTYPE));
-		void (*FillRectDefault)( (struct BoardInfo *), (struct RenderInfo *), (WORD), (WORD), (WORD), (WORD), __REGD4(ULONG), __REGD5(UBYTE), (RGBFTYPE));
-		void (*InvertRect)( (struct BoardInfo *), (struct RenderInfo *), (WORD), (WORD), (WORD), (WORD), __REGD4(UBYTE), (RGBFTYPE));
-		void (*InvertRectDefault)( (struct BoardInfo *), (struct RenderInfo *), (WORD), (WORD), (WORD), (WORD), __REGD4(UBYTE), (RGBFTYPE));
-		void (*BlitRect)( (struct BoardInfo *), (struct RenderInfo *), (WORD), (WORD), (WORD), (WORD), __REGD4(WORD), __REGD5(WORD), __REGD6(UBYTE), (RGBFTYPE));
-		void (*BlitRectDefault)( (struct BoardInfo *), (struct RenderInfo *), (WORD), (WORD), (WORD), (WORD), __REGD4(WORD), __REGD5(WORD), __REGD6(UBYTE), (RGBFTYPE));
-		void (*BlitTemplate)( (struct BoardInfo *), (struct RenderInfo *), (struct Template *), (WORD), (WORD), (WORD), (WORD), __REGD4(UBYTE), (RGBFTYPE));
-		void (*BlitTemplateDefault)( (struct BoardInfo *), (struct RenderInfo *), (struct Template *), (WORD), (WORD), (WORD), (WORD), __REGD4(UBYTE), (RGBFTYPE));
-		void (*BlitPattern)( (struct BoardInfo *), (struct RenderInfo *), (struct Pattern *), (WORD), (WORD), (WORD), (WORD), __REGD4(UBYTE), (RGBFTYPE));
-		void (*BlitPatternDefault)( (struct BoardInfo *), (struct RenderInfo *), (struct Pattern *), (WORD), (WORD), (WORD), (WORD), __REGD4(UBYTE), (RGBFTYPE));
-		void (*DrawLine)( (struct BoardInfo *), (struct RenderInfo *), (struct Line *), (UBYTE), (RGBFTYPE));
-		void (*DrawLineDefault)( (struct BoardInfo *), (struct RenderInfo *), (struct Line *), (UBYTE), (RGBFTYPE));
-		void (*BlitRectNoMaskComplete)( (struct BoardInfo *), (struct RenderInfo *), (struct RenderInfo *), (WORD), (WORD), (WORD), (WORD), __REGD4(WORD), __REGD5(WORD), __REGD6(UBYTE), (RGBFTYPE));
-		void (*BlitRectNoMaskCompleteDefault)( (struct BoardInfo *), (struct RenderInfo *), (struct RenderInfo *), (WORD), (WORD), (WORD), (WORD), __REGD4(WORD), __REGD5(WORD), __REGD6(UBYTE), (RGBFTYPE));
-		void (*BlitPlanar2Direct)( (struct BoardInfo *), (struct BitMap *), (struct RenderInfo *), __REGA3(struct ColorIndexMapping *), (SHORT), (SHORT), (SHORT), (SHORT), __REGD4(SHORT), __REGD5(SHORT), __REGD6(UBYTE), (UBYTE));
-		void (*BlitPlanar2DirectDefault)( (struct BoardInfo *), (struct BitMap *), (struct RenderInfo *), __REGA3(struct ColorIndexMapping *), (SHORT), (SHORT), (SHORT), (SHORT), __REGD4(SHORT), __REGD5(SHORT), __REGD6(UBYTE), (UBYTE));
-		BOOL (*EnableSoftSprite)( (struct BoardInfo *), (ULONG formatflags), (struct ModeInfo *));
-		BOOL (*EnableSoftSpriteDefault)( (struct BoardInfo *), (ULONG formatflags), (struct ModeInfo *));
-		APTR (*AllocCardMemAbs)( (struct BoardInfo *), (ULONG size), (char *target));
-		void (*SetSplitPosition)( (struct BoardInfo *), (SHORT));
-		void (*ReInitMemory)( (struct BoardInfo *), (RGBFTYPE));
-		void (*Reserved2Default)( (struct BoardInfo *));
-		void (*Reserved3)( (struct BoardInfo *));
-		void (*Reserved3Default)( (struct BoardInfo *));
-		int (*WriteYUVRect)( (struct BoardInfo *), (APTR), (SHORT), (SHORT), (struct RenderInfo *), (SHORT), (SHORT), __REGD4(SHORT), __REGD5(SHORT), __REGA3(struct TagItem *));
-		int (*WriteYUVRectDefault)( (struct BoardInfo *), (APTR), (SHORT), (SHORT), (struct RenderInfo *), (SHORT), (SHORT), __REGD4(SHORT), __REGD5(SHORT), __REGA3(struct TagItem *));
-		BOOL (*GetVSyncState)( (struct BoardInfo *), (BOOL));
-		ULONG (*GetVBeamPos)( (struct BoardInfo *));
-		void (*SetDPMSLevel)( (struct BoardInfo *), (ULONG));
-		void (*ResetChip)( (struct BoardInfo *));
-		ULONG (*GetFeatureAttrs)( (struct BoardInfo *), (APTR), (ULONG), (struct TagItem *));
-		struct BitMap * (*AllocBitMap)( (struct BoardInfo *), (ULONG), (ULONG), (struct TagItem *));
-		BOOL (*FreeBitMap)( (struct BoardInfo *), (struct BitMap *), (struct TagItem *));
-		ULONG (*GetBitMapAttr)( (struct BoardInfo *), (struct BitMap *), (ULONG));
-		BOOL (*SetSprite)( (struct BoardInfo *), (BOOL), (RGBFTYPE));
-		void (*SetSpritePosition)( (struct BoardInfo *), (WORD), (WORD), (RGBFTYPE));
-		void (*SetSpriteImage)( (struct BoardInfo *), (RGBFTYPE));
-		void (*SetSpriteColor)( (struct BoardInfo *), (UBYTE), (UBYTE), (UBYTE), (UBYTE), (RGBFTYPE));
-		APTR (*CreateFeature)( (struct BoardInfo *), (ULONG), (struct TagItem *));
-		ULONG (*SetFeatureAttrs)( (struct BoardInfo *), (APTR), (ULONG), (struct TagItem *));
-		BOOL (*DeleteFeature)( (struct BoardInfo *), (APTR), (ULONG));
+		APTR (*AllocCardMem)(struct BoardInfo *bi, ULONG size, BOOL force, BOOL system);
+		BOOL (*FreeCardMem)(struct BoardInfo *bi, APTR membase);
+		BOOL (*SetSwitch)(struct BoardInfo *, BOOL);
+		void (*SetColorArray)(struct BoardInfo *, UWORD,  UWORD);
+		void (*SetDAC)(struct BoardInfo *, RGBFTYPE);
+		void (*SetGC)(struct BoardInfo *, struct ModeInfo *, BOOL);
+		void (*SetPanning)(struct BoardInfo *, UBYTE *, UWORD, WORD, WORD, RGBFTYPE);
+		UWORD (*CalculateBytesPerRow)(struct BoardInfo *, UWORD, RGBFTYPE);
+		APTR (*CalculateMemory)(struct BoardInfo *, APTR, RGBFTYPE);
+		ULONG (*GetCompatibleFormats)(struct BoardInfo *, RGBFTYPE);
+		BOOL (*SetDisplay)(struct BoardInfo *, BOOL);
+		LONG (*ResolvePixelClock)(struct BoardInfo *, struct ModeInfo *, ULONG, RGBFTYPE);
+		ULONG (*GetPixelClock)(struct BoardInfo *bi, struct ModeInfo *, ULONG, RGBFTYPE);
+		void (*SetClock)(struct BoardInfo *);
+		void (*SetMemoryMode)(struct BoardInfo *, RGBFTYPE);
+		void (*SetWriteMask)(struct BoardInfo *, UBYTE);
+		void (*SetClearMask)(struct BoardInfo *, UBYTE);
+		void (*SetReadPlane)(struct BoardInfo *, UBYTE);
+		void (*WaitVerticalSync)(struct BoardInfo *, BOOL);
+		BOOL (*SetInterrupt)(struct BoardInfo *, BOOL);
+		void (*WaitBlitter)(struct BoardInfo *);
+		void (*ScrollPlanar)(struct BoardInfo *, struct RenderInfo *, UWORD,  UWORD,  UWORD,  UWORD,  UWORD, UWORD, UBYTE);
+		void (*ScrollPlanarDefault)(struct BoardInfo *, struct RenderInfo *, UWORD,  UWORD,  UWORD,  UWORD,  UWORD, UWORD, UBYTE);
+		void (*UpdatePlanar)(struct BoardInfo *, struct BitMap *, struct RenderInfo *, SHORT, SHORT, SHORT, SHORT, UBYTE);
+		void (*UpdatePlanarDefault)(struct BoardInfo *, struct BitMap *, struct RenderInfo *, SHORT, SHORT, SHORT, SHORT, UBYTE);
+		void (*BlitPlanar2Chunky)(struct BoardInfo *, struct BitMap *, struct RenderInfo *, SHORT, SHORT, SHORT, SHORT, SHORT, SHORT, UBYTE, UBYTE);
+		void (*BlitPlanar2ChunkyDefault)(struct BoardInfo *, struct BitMap *, struct RenderInfo *, SHORT, SHORT, SHORT, SHORT, SHORT, SHORT, UBYTE, UBYTE);
+		void (*FillRect)(struct BoardInfo *, struct RenderInfo *, WORD, WORD, WORD, WORD, ULONG, UBYTE, RGBFTYPE);
+		void (*FillRectDefault)(struct BoardInfo *, struct RenderInfo *, WORD, WORD, WORD, WORD, ULONG, UBYTE, RGBFTYPE);
+		void (*InvertRect)(struct BoardInfo *, struct RenderInfo *, WORD, WORD, WORD, WORD, UBYTE, RGBFTYPE);
+		void (*InvertRectDefault)(struct BoardInfo *, struct RenderInfo *, WORD, WORD, WORD, WORD, UBYTE, RGBFTYPE);
+		void (*BlitRect)(struct BoardInfo *, struct RenderInfo *, WORD, WORD, WORD, WORD, WORD, WORD, UBYTE, RGBFTYPE);
+		void (*BlitRectDefault)(struct BoardInfo *, struct RenderInfo *, WORD, WORD, WORD, WORD, WORD, WORD, UBYTE, RGBFTYPE);
+		void (*BlitTemplate)(struct BoardInfo *, struct RenderInfo *, struct Template *, WORD, WORD, WORD, WORD, UBYTE, RGBFTYPE);
+		void (*BlitTemplateDefault)(struct BoardInfo *, struct RenderInfo *, struct Template *, WORD, WORD, WORD, WORD, UBYTE, RGBFTYPE);
+		void (*BlitPattern)(struct BoardInfo *, struct RenderInfo *, struct Pattern *, WORD, WORD, WORD, WORD, UBYTE, RGBFTYPE);
+		void (*BlitPatternDefault)(struct BoardInfo *, struct RenderInfo *, struct Pattern *, WORD, WORD, WORD, WORD, UBYTE, RGBFTYPE);
+		void (*DrawLine)(struct BoardInfo *, struct RenderInfo *, struct Line *, UBYTE, RGBFTYPE);
+		void (*DrawLineDefault)(struct BoardInfo *, struct RenderInfo *, struct Line *, UBYTE, RGBFTYPE);
+		void (*BlitRectNoMaskComplete)(struct BoardInfo *, struct RenderInfo *, struct RenderInfo *, WORD, WORD, WORD, WORD, WORD, WORD, UBYTE, RGBFTYPE);
+		void (*BlitRectNoMaskCompleteDefault)(struct BoardInfo *, struct RenderInfo *, struct RenderInfo *, WORD, WORD, WORD, WORD, WORD, WORD, UBYTE, RGBFTYPE);
+		void (*BlitPlanar2Direct)(struct BoardInfo *, struct BitMap *, struct RenderInfo *, struct ColorIndexMapping *, SHORT, SHORT, SHORT, SHORT, SHORT, SHORT, UBYTE, UBYTE);
+		void (*BlitPlanar2DirectDefault)(struct BoardInfo *, struct BitMap *, struct RenderInfo *, struct ColorIndexMapping *, SHORT, SHORT, SHORT, SHORT, SHORT, SHORT, UBYTE, UBYTE);
+		BOOL (*EnableSoftSprite)(struct BoardInfo *, ULONG formatflags, struct ModeInfo *);
+		BOOL (*EnableSoftSpriteDefault)(struct BoardInfo *, ULONG formatflags, struct ModeInfo *);
+		APTR (*AllocCardMemAbs)(struct BoardInfo *, ULONG size, char *target);
+		void (*SetSplitPosition)(struct BoardInfo *, SHORT);
+		void (*ReInitMemory)(struct BoardInfo *, RGBFTYPE);
+		void (*Reserved2Default)(struct BoardInfo *);
+		void (*Reserved3)(struct BoardInfo *);
+		void (*Reserved3Default)(struct BoardInfo *);
+		int (*WriteYUVRect)(struct BoardInfo *, APTR, SHORT, SHORT, struct RenderInfo *, SHORT, SHORT, SHORT, SHORT, struct TagItem *);
+		int (*WriteYUVRectDefault)(struct BoardInfo *, APTR, SHORT, SHORT, struct RenderInfo *, SHORT, SHORT, SHORT, SHORT, struct TagItem *);
+		BOOL (*GetVSyncState)(struct BoardInfo *, BOOL);
+		ULONG (*GetVBeamPos)(struct BoardInfo *);
+		void (*SetDPMSLevel)(struct BoardInfo *, ULONG);
+		void (*ResetChip)(struct BoardInfo *);
+		ULONG (*GetFeatureAttrs)(struct BoardInfo *, APTR, ULONG, struct TagItem *);
+		struct BitMap * (*AllocBitMap)(struct BoardInfo *, ULONG, ULONG, struct TagItem *);
+		BOOL (*FreeBitMap)(struct BoardInfo *, struct BitMap *, struct TagItem *);
+		ULONG (*GetBitMapAttr)(struct BoardInfo *, struct BitMap *, ULONG);
+		BOOL (*SetSprite)(struct BoardInfo *, BOOL, RGBFTYPE);
+		void (*SetSpritePosition)(struct BoardInfo *, WORD, WORD, RGBFTYPE);
+		void (*SetSpriteImage)(struct BoardInfo *, RGBFTYPE);
+		void (*SetSpriteColor)(struct BoardInfo *, UBYTE, UBYTE, UBYTE, UBYTE, RGBFTYPE);
+		APTR (*CreateFeature)(struct BoardInfo *, ULONG, struct TagItem *);
+		ULONG (*SetFeatureAttrs)(struct BoardInfo *, APTR, ULONG, struct TagItem *);
+		BOOL (*DeleteFeature)(struct BoardInfo *, APTR, ULONG);
 		struct MinList  SpecialFeatures;
 		struct ModeInfo  *ModeInfo;  /* Chip Settings Stuff */
 		RGBFTYPE  RGBFormat;
@@ -491,10 +491,10 @@ struct BoardInfo
 		APTR  MemorySpaceBase;  /* the base address of the board memory address space */
 		ULONG  MemorySpaceSize;  /* size of that area */
 		APTR  DoubleBufferList;  /* chain of dbinfos being notified on vblanks */
-		struct timeval  SyncTime;  /* system time when screen was set up, used for pseudo vblanks */
+		struct timeval  SyncTime;  /* system time when screen was set up,  used for pseudo vblanks */
 		ULONG  SyncPeriod;  /* length of one frame in micros */
 		struct MsgPort  SoftVBlankPort;  /* MsgPort for software emulation of board interrupt */
-		struct MinList  WaitQ;   /* for WaitTOF and WaitBOVP, all elements will be signaled on VBlank */
+		struct MinList  WaitQ;   /* for WaitTOF and WaitBOVP,  all elements will be signaled on VBlank */
 		LONG  EssentialFormats;  /* these RGBFormats will be used when user does not choose "all"
 		     will be filled by InitBoard() */
 		UBYTE  *MouseImageBuffer;  /* rendered to the destination color format */
@@ -503,7 +503,7 @@ struct BoardInfo
 		struct BitMap  *backBitMap; /* Its bitmap */
 		struct BitMapExtra  *backExtra; /* its bitmapExtra */
 		WORD  YSplit;
-		ULONG  MaxPlanarMemory; /* Size of a bitplane if planar. If left blank, MemorySize>>2 */
+		ULONG  MaxPlanarMemory; /* Size of a bitplane if planar. If left blank,  MemorySize>>2 */
 		ULONG  MaxBMWidth; /* Maximum width of a bitmap */
 		ULONG  MaxBMHeight; /* Maximum height of a bitmap */
 		struct CLUTEntry  SecondaryCLUT[256]; /* Switched to for lower/front screen */
@@ -578,7 +578,7 @@ struct BoardInfo
 
 #define BIF_IGNOREMASK BIF_NOMASKBLITS
 
-/* write errors, continued for historical reasons... :-) */
+/* write errors,  continued for historical reasons... :-) */
 #define BIB_NOC2PBLITS BIB_NOP2CBLITS
 #define BIF_NOC2PBLITS BIF_NOP2CBLITS
 
