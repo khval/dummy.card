@@ -126,107 +126,107 @@ void  _ScrollPlanar_( struct BoardInfo *bi,struct RenderInfo *ri, UWORD a, UWORD
 
 }
 
-void  _ScrollPlanarDefault_( struct BoardInfo *bi,struct RenderInfo *, UWORD, UWORD, UWORD, UWORD, UWORD, UWORD, UBYTE)
+void  _ScrollPlanarDefault_( struct BoardInfo *bi,struct RenderInfo *ri, UWORD a, UWORD b, UWORD c, UWORD d, UWORD e, UWORD f, UBYTE g)
 {
 
 }
 
-void  _UpdatePlanar_( struct BoardInfo *bi,struct BitMap *, struct RenderInfo *, SHORT, SHORT, SHORT, SHORT, UBYTE)
+void  _UpdatePlanar_( struct BoardInfo *bi,struct BitMap *bm, struct RenderInfo *ri, SHORT a, SHORT b, SHORT c, SHORT d, UBYTE e)
 {
 
 }
 
-void  _UpdatePlanarDefault_( struct BoardInfo *bi,struct BitMap *, struct RenderInfo *, SHORT, SHORT, SHORT, SHORT, UBYTE)
+void  _UpdatePlanarDefault_( struct BoardInfo *bi,struct BitMap *bm, struct RenderInfo *ri, SHORT a, SHORT b, SHORT c, SHORT d, UBYTE e)
 {
 
 }
 
-void  _BlitPlanar2Chunky_( struct BoardInfo *bi,struct BitMap *, struct RenderInfo *, SHORT, SHORT, SHORT, SHORT, SHORT, SHORT, UBYTE, UBYTE)
+void  _BlitPlanar2Chunky_( struct BoardInfo *bi,struct BitMap *bm, struct RenderInfo *ri, SHORT a, SHORT b, SHORT c, SHORT d, SHORT e, SHORT f, UBYTE g, UBYTE h)
 {
 
 }
 
-void  _BlitPlanar2ChunkyDefault_( struct BoardInfo *bi,struct BitMap *, struct RenderInfo *, SHORT, SHORT, SHORT, SHORT, SHORT, SHORT, UBYTE, UBYTE)
+void  _BlitPlanar2ChunkyDefault_( struct BoardInfo *bi,struct BitMap *bm, struct RenderInfo *ri, SHORT a, SHORT b, SHORT c, SHORT d, SHORT e, SHORT f, UBYTE g, UBYTE h)
 {
 
 }
 
-void  _FillRect_( struct BoardInfo *bi,struct RenderInfo *, WORD, WORD, WORD, WORD ULONG, UBYTE, RGBFTYPE rgbtype)
+void  _FillRect_( struct BoardInfo *bi,struct RenderInfo *ri, WORD x, WORD y, WORD w, WORD h, ULONG pen, UBYTE mask, RGBFTYPE rgbtype)
 {
 
 }
 
-void  _FillRectDefault_( struct BoardInfo *bi,struct RenderInfo *, WORD, WORD, WORD, WORD ULONG, UBYTE, RGBFTYPE rgbtype)
+void  _FillRectDefault_( struct BoardInfo *bi,struct RenderInfo *ri, WORD x, WORD y, WORD w, WORD h, ULONG pen, UBYTE mask, RGBFTYPE rgbtype)
 {
 
 }
 
-void  _InvertRect_( struct BoardInfo *bi,struct RenderInfo *, WORD, WORD, WORD, WORD, UBYTE, RGBFTYPE rgbtype)
+void  _InvertRect_( struct BoardInfo *bi,struct RenderInfo *ri, WORD x, WORD y, WORD w, WORD h, UBYTE mask, RGBFTYPE rgbtype)
 {
 
 }
 
-void  _InvertRectDefault_( struct BoardInfo *bi,struct RenderInfo *, WORD, WORD, WORD, WORD, UBYTE, RGBFTYPE rgbtype)
+void  _InvertRectDefault_( struct BoardInfo *bi,struct RenderInfo *ri, WORD x, WORD y, WORD w, WORD h, UBYTE mask, RGBFTYPE rgbtype)
 {
 
 }
 
-void  _BlitRect_( struct BoardInfo *bi,struct RenderInfo *, WORD, WORD, WORD, WORD, WORD, WORD, UBYTE, RGBFTYPE rgbtype)
+void  _BlitRect_( struct BoardInfo *bi,struct RenderInfo *ri, WORD srcx, WORD srcy, WORD desx, WORD dexy, WORD w, WORD h, UBYTE mask, RGBFTYPE rgbtype)
 {
 
 }
 
-void  _BlitRectDefault_( struct BoardInfo *bi,struct RenderInfo *, WORD, WORD, WORD, WORD, WORD, WORD, UBYTE, RGBFTYPE rgbtype)
+void  _BlitRectDefault_( struct BoardInfo *bi,struct RenderInfo *ri, WORD srcx, WORD srcy, WORD desx, WORD desy, WORD w, WORD h, UBYTE mask, RGBFTYPE rgbtype)
 {
 
 }
 
-void  _BlitTemplate_( struct BoardInfo *bi,struct RenderInfo *, struct Template *, WORD, WORD, WORD, WORD, UBYTE, RGBFTYPE rgbtype)
+void  _BlitTemplate_( struct BoardInfo *bi,struct RenderInfo *ri, struct Template *t, WORD x, WORD y, WORD w, WORD h, UBYTE mask, RGBFTYPE rgbtype)
 {
 
 }
 
-void  _BlitTemplateDefault_( struct BoardInfo *bi,struct RenderInfo *, struct Template *, WORD, WORD, WORD, WORD, UBYTE, RGBFTYPE rgbtype)
+void  _BlitTemplateDefault_( struct BoardInfo *bi,struct RenderInfo *ri, struct Template *t, WORD x, WORD y, WORD w, WORD h, UBYTE mask, RGBFTYPE rgbtype)
 {
 
 }
 
-void  _BlitPattern_( struct BoardInfo *bi,struct RenderInfo *, struct Pattern *, WORD, WORD, WORD, WORD, UBYTE, RGBFTYPE rgbtype)
+void  _BlitPattern_( struct BoardInfo *bi,struct RenderInfo *ri, struct Pattern *p, WORD x, WORD y, WORD w, WORD h, UBYTE mask, RGBFTYPE rgbtype)
 {
 
 }
 
-void  _BlitPatternDefault_( struct BoardInfo *bi,struct RenderInfo *, struct Pattern *, WORD, WORD, WORD, WORD, UBYTE, RGBFTYPE rgbtype)
+void  _BlitPatternDefault_( struct BoardInfo *bi,struct RenderInfo *ri, struct Pattern *p, WORD x, WORD y, WORD w, WORD h, UBYTE mask, RGBFTYPE rgbtype)
 {
 
 }
 
-void  _DrawLine_( struct BoardInfo *bi,struct RenderInfo *, struct Line *, UBYTE, RGBFTYPE rgbtype)
+void  _DrawLine_( struct BoardInfo *bi,struct RenderInfo *ri, struct Line *l, UBYTE mask, RGBFTYPE rgbtype)
 {
 
 }
 
-void  _DrawLineDefault_( struct BoardInfo *bi,struct RenderInfo *, struct Line *, UBYTE, RGBFTYPE rgbtype)
+void  _DrawLineDefault_( struct BoardInfo *bi,struct RenderInfo *ri, struct Line *l, UBYTE mask, RGBFTYPE rgbtype)
 {
 
 }
 
-void  _BlitRectNoMaskComplete_( struct BoardInfo *bi,struct RenderInfo *, struct RenderInfo *, WORD, WORD, WORD, WORD, WORD, WORD, UBYTE, RGBFTYPE rgbtype)
+void  _BlitRectNoMaskComplete_( struct BoardInfo *bi,struct RenderInfo *s_ri, struct RenderInfo *d_ri, WORD srcx, WORD srcy, WORD desx, WORD desy, WORD w, WORD h, UBYTE OpCode, RGBFTYPE rgbtype)
 {
 
 }
 
-void  _BlitRectNoMaskCompleteDefault_( struct BoardInfo *bi,struct RenderInfo *, struct RenderInfo *, WORD, WORD, WORD, WORD, WORD, WORD, UBYTE, RGBFTYPE rgbtype)
+void  _BlitRectNoMaskCompleteDefault_( struct BoardInfo *bi,struct RenderInfo *ri, struct RenderInfo *ri, WORD srcx, WORD srcy, WORD desx, WORD desy, WORD w, WORD h, UBYTE OpCode, RGBFTYPE rgbtype)
 {
 
 }
 
-void  _BlitPlanar2Direct_( struct BoardInfo *bi,struct BitMap *, struct RenderInfo *, struct ColorIndexMapping *, SHORT, SHORT, SHORT, SHORT, SHORT, SHORT, UBYTE, UBYTE)
+void  _BlitPlanar2Direct_( struct BoardInfo *bi,struct BitMap *bm, struct RenderInfo *ri, struct ColorIndexMapping *, SHORT, SHORT, SHORT, SHORT, SHORT, SHORT, UBYTE, UBYTE)
 {
 
 }
 
-void  _BlitPlanar2DirectDefault_( struct BoardInfo *bi,struct BitMap *, struct RenderInfo *, struct ColorIndexMapping *, SHORT, SHORT, SHORT, SHORT, SHORT, SHORT, UBYTE, UBYTE)
+void  _BlitPlanar2DirectDefault_( struct BoardInfo *bi,struct BitMap *bm, struct RenderInfo *ri, struct ColorIndexMapping *, SHORT, SHORT, SHORT, SHORT, SHORT, SHORT, UBYTE, UBYTE)
 {
 
 }
@@ -271,12 +271,12 @@ void  _Reserved3Default_( struct BoardInfo *bi)
 
 }
 
-int  _WriteYUVRect_( struct BoardInfo *bi,APTR, SHORT, SHORT struct RenderInfo *, SHORT, SHORT, SHORT, SHORT, struct TagItem *)
+int  _WriteYUVRect_( struct BoardInfo *bi,APTR, SHORT, SHORT struct RenderInfo *ri, SHORT, SHORT, SHORT, SHORT, struct TagItem *tagList)
 {
 
 }
 
-int  _WriteYUVRectDefault_( struct BoardInfo *bi,APTR, SHORT, SHORT struct RenderInfo *, SHORT, SHORT, SHORT, SHORT, struct TagItem *)
+int  _WriteYUVRectDefault_( struct BoardInfo *bi,APTR, SHORT, SHORT struct RenderInfo *ri, SHORT, SHORT, SHORT, SHORT, struct TagItem *tagList)
 {
 
 }
@@ -301,22 +301,22 @@ void  _ResetChip_( struct BoardInfo *bi)
 
 }
 
-ULONG  _GetFeatureAttrs_( struct BoardInfo *bi,APTR ULONG, struct TagItem *)
+ULONG  _GetFeatureAttrs_( struct BoardInfo *bi,APTR ULONG, struct TagItem *tagList)
 {
 
 }
 
-struct BitMap *  _AllocBitMap_( struct BoardInfo *bi,ULONG, ULONG, struct TagItem *)
+struct BitMap *  _AllocBitMap_( struct BoardInfo *bi,ULONG, ULONG, struct TagItem *tagList)
 {
 
 }
 
-BOOL  _FreeBitMap_( struct BoardInfo *bi,struct BitMap *, struct TagItem *)
+BOOL  _FreeBitMap_( struct BoardInfo *bi,struct BitMap *bm, struct TagItem *tagList)
 {
 
 }
 
-ULONG  _GetBitMapAttr_( struct BoardInfo *bi,struct BitMap *, ULONG)
+ULONG  _GetBitMapAttr_( struct BoardInfo *bi,struct BitMap *bm, ULONG)
 {
 
 }
@@ -341,12 +341,12 @@ void  _SetSpriteColor_( struct BoardInfo *bi,UBYTE, UBYTE, UBYTE, UBYTE, RGBFTYP
 
 }
 
-APTR  _CreateFeature_( struct BoardInfo *bi,ULONG, struct TagItem *)
+APTR  _CreateFeature_( struct BoardInfo *bi,ULONG, struct TagItem *tagList)
 {
 
 }
 
-ULONG  _SetFeatureAttrs_( struct BoardInfo *bi,APTR, ULONG, struct TagItem *)
+ULONG  _SetFeatureAttrs_( struct BoardInfo *bi,APTR, ULONG, struct TagItem *tagList)
 {
 
 }
