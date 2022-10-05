@@ -1,6 +1,0 @@
-copy /include/#? sdk:Include/include_h/ all
-
-IF EXISTS dummy_chip.chip
-copy dummy_chip.chip libs:
-avail flush
-endif
