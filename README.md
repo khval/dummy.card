@@ -1,2 +1,2 @@
-# dummy.chip
-Dummy.chip is a framebuffer video driver for AmigaOS4.1
+# dummy.card
+Dummy.card is a framebuffer video driver for AmigaOS4.1
