@@ -1,0 +1,16 @@
+copy /include/#? sdk:Include/include_h/ all
+
+IF EXISTS dummy.card
+
+IF NOT EXISTS libs:picasso96
+makedir libs:picasso96
+endif
+
+IF EXISTS libs:picasso96
+copy dummy.card libs:picasso96
+avail flush
+else
+echo "can't install dummy.card"
+endif
+
+endif

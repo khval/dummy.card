@@ -1,0 +1,32 @@
+cd > env:olddir
+
+IF NOT EXISTS ram:temp
+makedir ram:temp
+endif
+
+copy /dummy_card.xml ram:temp
+
+cd ram:temp
+
+idltool -a dummy_card.xml
+
+cd > env:thisdir
+echo $thisdir
+
+if exists dummy_card_files
+cd dummy_card_files/
+; replace default text set by IDLTOOL
+rpl.exe -R "Hyperion Entertainment CVBA" "LiveForIt Software" >NIL:
+rpl.exe -R "All Rights Reserved" "LGPL" >NIL:
+endif 
+
+cd $olddir
+copy ram:temp/include/#? /include/  all
+copy ram:temp/dummy_card_vectors.c /
+copy ram:temp/dummy_card_vectors.h /
+copy ram:temp/dummy_card_files/dummy_card_vectors.c ""
+copy ram:temp/dummy_card_files/dummy_card_vectors.h ""
+xcopy ram:temp/dummy_card_files/main main NOREP ALL QUIET
+
+delete QUIET ram:temp all 
+

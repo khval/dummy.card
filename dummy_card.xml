@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE library SYSTEM "library.dtd">
+<library name="dummy_card" basename="DummyCardBase" openname="dummy.card">
+	<include>exec/types.h</include>
+	<include>devices/timer.h</include>
+	<include>proto/exec.h</include>
+	<include>proto/dos.h</include>
+	<include>libraries/dummy_card.h</include>
+	<include>libraries/maybe_boardinfo.h</include>
+	<interface name="main" version="1.0" struct="DummycardIFace" prefix="_dummy_card_" asmprefix="IDummycard" global="IDummyCard">
+		<method name="Obtain" result="ULONG"/>
+		<method name="Release" result="ULONG"/>
+		<method name="Expunge" result="void" status="unimplemented"/>
+		<method name="Clone" result="struct Interface *" status="unimplemented"/>
+		<method name="FindCard" result="BOOL">
+			<arg name="bi" type="struct BoardInfo *"/>
+		</method>
+		<method name="InitCard" result="void">
+			<arg name="bi" type="struct BoardInfo *"/>
+			<arg name="ToolTypes" type="char **"/>
+		</method>
+		<method name="InitChip" result="BOOL">
+			<arg name="bi" type="struct BoardInfo *"/>
+		</method>
+	</interface>
+</library>
+
