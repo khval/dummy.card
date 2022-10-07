@@ -21,8 +21,8 @@
 #include <proto/exec.h>
 #include <proto/dos.h>
 #include <devices/timer.h>
-#include <libraries/dummy_chip.h>
-#include <proto/dummy_chip.h>
+#include <libraries/dummy_card.h>
+#include <proto/dummy_card.h>
 #include <stdarg.h>
 
 /****** dummy_card/main/Obtain ******************************************
@@ -52,7 +52,7 @@
 *
 */
 
-ULONG _dummy_card_Obtain(struct DummyChipIFace *Self)
+ULONG _dummy_card_Obtain(struct DummycardIFace *Self)
 {
     return Self -> Data.RefCount++;
 }

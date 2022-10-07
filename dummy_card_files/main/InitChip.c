@@ -21,9 +21,9 @@
 #include <exec/types.h>
 #include <proto/exec.h>
 #include <proto/dos.h>
-#include <libraries/dummy_chip.h>
+#include <libraries/dummy_card.h>
 #include <libraries/maybe_boardinfo.h>
-#include <proto/dummy_chip.h>
+#include <proto/dummy_card.h>
 #include <stdarg.h>
 
 #include <stdio.h>
@@ -59,7 +59,7 @@
 *
 */
 
-BOOL _dummy_card_InitChip(struct DummyChipIFace *Self,  struct BoardInfo * bi)
+BOOL _dummy_card_InitChip(struct DummycardIFace *Self,  struct BoardInfo * bi)
 {
 	printf("%s:%s:%d\n",__FILE__,__FUNCTION__,__LINE__);
 

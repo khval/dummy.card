@@ -19,10 +19,11 @@
 #include <proto/exec.h>
 #include <dos/dos.h>
 #include <exec/types.h>
+#include <exec/Interrupts.h>
 #include <proto/exec.h>
 #include <proto/dos.h>
-#include <libraries/dummy_chip.h>
-#include <proto/dummy_chip.h>
+#include <libraries/dummy_card.h>
+#include <proto/dummy_card.h>
 #include <stdarg.h>
 
 #include <stdio.h>
