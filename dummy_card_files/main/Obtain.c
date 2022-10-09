@@ -21,9 +21,12 @@
 #include <proto/exec.h>
 #include <proto/dos.h>
 #include <devices/timer.h>
+
+#include <stdarg.h>
+
 #include <libraries/dummy_card.h>
 #include <proto/dummy_card.h>
-#include <stdarg.h>
+
 
 /****** dummy_card/main/Obtain ******************************************
 *
