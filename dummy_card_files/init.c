@@ -29,6 +29,9 @@
 #include "dummy.card_rev.h"
 STATIC CONST UBYTE USED verstag[] = VERSTAG;
 
+BOOL init();
+void close_libs();
+
 struct _library
 {
     struct Library libNode;
@@ -60,6 +63,14 @@ int32 _start(void);
 
 int32 _start(void)
 {
+	IExec = (struct ExecIFace *)(*(struct ExecBase **)4)->MainInterface;
+
+	if (init())
+	{
+		IDOS -> Printf("This is a video driver, this not a program...\n");
+		close_libs();
+	}
+
     /* If you feel like it, open DOS and print something to the user */
     return RETURN_FAIL;
 }
