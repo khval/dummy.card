@@ -10,6 +10,6 @@ but system gets confused, as functions are not doing anything, or not what they 
 This project started by asking for help on Amigans.net:
 https://www.amigans.net/modules/newbb/viewtopic.php?topic_id=8982
 
-As you can see from comments, there no official documentations, 
-about this subject for AmigaOS4.1, instead we have depended on AmigaOS3.x docs.
+As you can see from the comments, there no official documentations, 
+about this subject for AmigaOS4.1, instead we have depended on the AmigaOS3.x docs.
 And open source video board / card drivers for AmigaOS3.x
