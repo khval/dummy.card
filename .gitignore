@@ -51,4 +51,4 @@ Module.symvers
 Mkfile.old
 dkms.conf
 
-*.card
+dummy_card_files/dummy.card
