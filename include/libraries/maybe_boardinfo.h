@@ -2,14 +2,6 @@
 #ifndef boardinfo_h
 #define boardinfo_h
 
-#ifdef __GNUC__
- #ifdef __PPC__
- #pragma pack(2)
- #endif
-#elif defined(__VBCC__)
- #pragma amiga-align
-#endif
-
 #ifndef  LIBRARIES_PICASSO96_H
 #include <libraries/Picasso96.h>
 #endif
@@ -36,6 +28,15 @@
 
 #ifndef DEVICES_TIMER_H
 #include <devices/timer.h>
+#endif
+
+
+#ifdef __GNUC__
+ #ifdef __PPC__
+ #pragma pack(2)
+ #endif
+#elif defined(__VBCC__)
+ #pragma amiga-align
 #endif
 
 
@@ -159,6 +160,7 @@ enum
 };
 
 /************************************************************************/
+
 
 struct CLUTEntry
 {
