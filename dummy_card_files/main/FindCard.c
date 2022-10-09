@@ -57,6 +57,11 @@
 
 BOOL card_found = FALSE;
 
+#define MEMSIZE 2*1024*1024
+
+UBYTE board_memory[MEMSIZE];
+UBYTE palette[256*4];
+
 BOOL _dummy_card_FindCard(struct DummycardIFace *Self, struct BoardInfo * bi)
 {
 	printf("%s:%s:%d\n",__FILE__,__FUNCTION__,__LINE__);
@@ -65,10 +70,10 @@ BOOL _dummy_card_FindCard(struct DummycardIFace *Self, struct BoardInfo * bi)
 	{
 		card_found = TRUE;	//  only one card!!
 
-		bi -> MemorySize = 2 * 1024 * 1024;	// 2 mb
-		bi -> MemoryBase = malloc(bi-> MemorySize);
-		bi -> RegisterBase = 0;
-		bi -> MemoryIOBase = 0;
+		bi -> MemorySize = MEMSIZE;	// 2 mb
+		bi -> MemoryBase = board_memory;
+		bi -> RegisterBase = palette;		// 256 color 4 channels
+		bi -> MemoryIOBase = 0xDEADBEEF;
 		bi -> MaxPlanarMemory = 0;
 
 	 	return TRUE;
