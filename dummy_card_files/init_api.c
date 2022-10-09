@@ -36,9 +36,21 @@
 
 // wrapped in a macro, so it's easy to change for a 680x0 trap call if needed.
 
+#define STATUS(x) printf("%s: %08x\n","name: " #x  "" , (int) bi -> x )
+
 #define M68K(x) const struct EmuTrap stub_ ## x = { TRAPINST, TRAPTYPE, (void *) stub_##x##_ppc };
 
+#if use_stubs
+
+#warning using stubs
 #define API(x) (void *) &stub_##x
+
+#else
+
+#define API(x) (void *) _##x##_
+
+#endif
+
 
 M68K(AllocCardMem);
 M68K(FreeCardMem);
@@ -179,5 +191,76 @@ void init_api( struct BoardInfo * bi )
 	bi -> CreateFeature = API(CreateFeature);
 	bi -> SetFeatureAttrs = API(SetFeatureAttrs);
 	bi -> DeleteFeature = API(DeleteFeature);
+
+void show_func(struct BoardInfo * bi)
+{
+	STATUS(AllocCardMem);
+	STATUS(FreeCardMem);
+	STATUS(SetSwitch);
+	STATUS(SetColorArray);
+	STATUS(SetDAC);
+	STATUS(SetGC);
+	STATUS(SetPanning);
+	STATUS(CalculateBytesPerRow);
+	STATUS(CalculateMemory);
+	STATUS(GetCompatibleFormats);
+	STATUS(SetDisplay);
+	STATUS(ResolvePixelClock);
+	STATUS(GetPixelClock);
+	STATUS(SetClock);
+	STATUS(SetMemoryMode);
+	STATUS(SetWriteMask);
+	STATUS(SetClearMask);
+	STATUS(SetReadPlane);
+	STATUS(WaitVerticalSync);
+	STATUS(SetInterrupt);
+	STATUS(WaitBlitter);
+	STATUS(ScrollPlanar);
+	STATUS(ScrollPlanarDefault);
+	STATUS(UpdatePlanar);
+	STATUS(UpdatePlanarDefault);
+	STATUS(BlitPlanar2Chunky);
+	STATUS(BlitPlanar2ChunkyDefault);
+	STATUS(FillRect);
+	STATUS(FillRectDefault);
+	STATUS(InvertRect);
+	STATUS(InvertRectDefault);
+	STATUS(BlitRect);
+	STATUS(BlitRectDefault);
+	STATUS(BlitTemplate);
+	STATUS(BlitTemplateDefault);
+	STATUS(BlitPattern);
+	STATUS(BlitPatternDefault);
+	STATUS(DrawLine);
+	STATUS(DrawLineDefault);
+	STATUS(BlitRectNoMaskComplete);
+	STATUS(BlitRectNoMaskCompleteDefault);
+	STATUS(BlitPlanar2Direct);
+	STATUS(BlitPlanar2DirectDefault);
+	STATUS(EnableSoftSprite);
+	STATUS(EnableSoftSpriteDefault);
+	STATUS(AllocCardMemAbs);
+	STATUS(SetSplitPosition);
+	STATUS(ReInitMemory);
+	STATUS(Reserved2Default);
+	STATUS(Reserved3);
+	STATUS(Reserved3Default);
+	STATUS(WriteYUVRect);
+	STATUS(WriteYUVRectDefault);
+	STATUS(GetVSyncState);
+	STATUS(GetVBeamPos);
+	STATUS(SetDPMSLevel);
+	STATUS(ResetChip);
+	STATUS(GetFeatureAttrs);
+	STATUS(AllocBitMap);
+	STATUS(FreeBitMap);
+	STATUS(GetBitMapAttr);
+	STATUS(SetSprite);
+	STATUS(SetSpritePosition);
+	STATUS(SetSpriteImage);
+	STATUS(SetSpriteColor);
+	STATUS(CreateFeature);
+	STATUS(SetFeatureAttrs);
+	STATUS(DeleteFeature);
 }
 

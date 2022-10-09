@@ -18,7 +18,9 @@ RM     = delete
 # Change these as required
 OPTIMIZE = -O3
 DEBUG    = # -gstabs -DDEBUG
-CFLAGS   = -Wall $(OPTIMIZE) $(DEBUG) -DMAXMODES=5
+CFLAGS   = -Wall $(OPTIMIZE) $(DEBUG)
+
+CFLAGS += -Duse_stubs=0
 
 # Flags passed to gcc during linking
 LINK = 
