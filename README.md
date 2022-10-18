@@ -21,3 +21,11 @@ functions names are documented in the API, so it question of mapping the know AP
 (how hard can it be, it can be useful too in other projects too..)...
 
 Then it finally crashes in Exec, most likely some memory free, or memory allocation.
+
+18.10.2022:
+A bit of digging, comparing resident address of graphic library init, with address of routines in the interface, 
+I don’t exactly get correct offset, but one pretty close is, InitBoardTagList(). That makes sense.
+(That’s one of functions undocumented in autodocs)
+
+What tags and what data pushed into function can be interesting to know.
+(Finding the tag values associated with function can be useful as well.)
