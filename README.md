@@ -27,5 +27,14 @@ A bit of digging, comparing resident address of graphic library init, with addre
 I don’t exactly get correct offset, but one pretty close is, InitBoardTagList(). That makes sense.
 (That’s one of functions undocumented in autodocs)
 
+27.10.2022:
+I patched the function can can confirm its the InitBoardTagList() function.
+
+I tried to do the same for exec.library, but init code is in middle of memory code chunk, 
+so offset are wrong, however, by looking at disassembly I can see abs memory address, where it failed.
+And last closest Exec call is CopyMem or CopyMemQuick functions.
+if I compare to the function pointer addresses in main interface of exec.library, so likely it’s one of this.
+why error is unknown is yet unknown, but I expect it might be set, when the function has bad input maybe.
+
 What tags and what data pushed into function can be interesting to know.
 (Finding the tag values associated with function can be useful as well.)
