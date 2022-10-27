@@ -23,7 +23,7 @@ functions names are documented in the API, so it question of mapping the know AP
 Then it finally crashes in Exec, most likely some memory free, or memory allocation.
 
 18.10.2022:
-A bit of digging, comparing resident address of graphic library init, with address of routines in the interface, 
+A bit of digging, comparing relative address of graphic library init, with address of routines in the interface, 
 I don’t exactly get correct offset, but one pretty close is, InitBoardTagList(). That makes sense.
 (That’s one of functions undocumented in autodocs)
 
