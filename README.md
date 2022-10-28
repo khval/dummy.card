@@ -39,3 +39,5 @@ And last closest Exec call is CopyMem or CopyMemQuick functions.
 if I compare to the function pointer addresses in main interface of exec.library, so likely it’s one of this.
 why error is unknown is yet unknown, but I expect it might be set, when the function has bad input maybe.
 
+08.10.2022:
+So looked at error code 0x01000008 its AN_SemCorrupt, A Semaphore is in a illigal state.
