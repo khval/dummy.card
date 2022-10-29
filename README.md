@@ -46,3 +46,17 @@ BUG:
 28.10.2022:
 
     So looked at error code 0x01000008 its AN_SemCorrupt, A Semaphore is in a illigal state.
+    I used Ranger, found my dummy video card, so went into Picasso96 prefs, and setup some video modes,
+    I has cleared the semaphore, before init it. not sure if helped. But after that same Error code,
+    but it crashed a different place.    
+
+29.10.2022
+
+    It crashes at lwz r9,0(r10)
+    r10 is a NULL pointer value, its access ref pointer, that not unnormal, we have also lwz r8,46(r10),
+    and lwz r4,48(r10), its several reads from it at different offsets, R10 most likely a struct, 
+    with some data, maybe Now need to find out what is NULL, maybe good idea is sett ALL NULL’s 
+    to 0xDEAD0000, 0xDEAD0004, 0xDEAD0008, 0xDEAD000C, etc… and see if we can find it.
+    It yeh… it looks like AmigaOS4.x happily crashes on the 0xDEAD0000 range,
+    as well, so that’s useful for debugging.
+    
