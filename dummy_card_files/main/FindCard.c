@@ -73,7 +73,9 @@ BOOL _dummy_card_FindCard(struct DummycardIFace *Self, struct BoardInfo * bi)
 		bi -> MemorySize = MEMSIZE;	// 2 mb
 		bi -> MemoryBase = board_memory;
 		bi -> RegisterBase = palette;		// 256 color 4 channels
-		bi -> MemoryIOBase = 0xDEADBEEF;
+
+		bi -> MemoryIOBase = 0xBEEF0000;				// not use by zz9000
+
 		bi -> MaxPlanarMemory = 0;
 
 	 	return TRUE;

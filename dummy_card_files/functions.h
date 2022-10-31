@@ -6,7 +6,10 @@ void  _SetColorArray_( struct BoardInfo *bi,UWORD startIndex, UWORD count);
 void  _SetDAC_( struct BoardInfo *bi, RGBFTYPE rgbtype);
 void  _SetGC_( struct BoardInfo *bi, struct ModeInfo *mi, BOOL border);
 void  _SetPanning_( struct BoardInfo *bi,UBYTE *Memory, UWORD Width, WORD Height, WORD XOffset, WORD YOffset, RGBFTYPE rgbtype);
-UWORD  _CalculateBytesPerRow_( struct BoardInfo *bi,UWORD width, UWORD height, RGBFTYPE rgbtype);
+
+UWORD  _CalculateBytesPerRow_( struct BoardInfo *bi,UWORD width, UWORD height, struct ModeInfo *mi, RGBFTYPE rgbtype);
+//UWORD  _CalculateBytesPerRow_( struct BoardInfo *bi,UWORD width, UWORD height, RGBFTYPE rgbtype);		// unchanged...
+
 APTR  _CalculateMemory_( struct BoardInfo *bi,APTR mem,  RGBFTYPE rgbtype);
 ULONG  _GetCompatibleFormats_( struct BoardInfo *bi, RGBFTYPE rgbtype);
 BOOL  _SetDisplay_( struct BoardInfo *bi, BOOL state);	// enable / disable video output

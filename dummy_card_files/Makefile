@@ -20,7 +20,7 @@ OPTIMIZE = -O3
 DEBUG    = # -gstabs -DDEBUG
 CFLAGS   = -Wall $(OPTIMIZE) $(DEBUG)
 
-CFLAGS += -Duse_stubs=0
+CFLAGS += -Duse_stubs=0 -Wno-int-conversion
 
 # Flags passed to gcc during linking
 LINK = 

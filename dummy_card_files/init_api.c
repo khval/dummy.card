@@ -131,7 +131,7 @@ void init_api( struct BoardInfo * bi )
 	bi -> SetGC = API(SetGC);
 	bi -> SetPanning = API(SetPanning);
 	bi -> CalculateBytesPerRow = API(CalculateBytesPerRow);
-//	bi -> CalculateMemory = API(CalculateMemory);
+	bi -> CalculateMemory = API(CalculateMemory);
 //	bi -> GetCompatibleFormats = API(GetCompatibleFormats);
 	bi -> SetDisplay = API(SetDisplay);
 	bi -> ResolvePixelClock = API(ResolvePixelClock);
@@ -141,7 +141,7 @@ void init_api( struct BoardInfo * bi )
 	bi -> SetWriteMask = API(SetWriteMask);
 	bi -> SetClearMask = API(SetClearMask);
 	bi -> SetReadPlane = API(SetReadPlane);
-//	bi -> WaitVerticalSync = API(WaitVerticalSync);
+	bi -> WaitVerticalSync = API(WaitVerticalSync);
 //	bi -> SetInterrupt = API(SetInterrupt);
 //	bi -> WaitBlitter = API(WaitBlitter);
 //	bi -> ScrollPlanar = API(ScrollPlanar);
@@ -168,9 +168,9 @@ void init_api( struct BoardInfo * bi )
 //	bi -> BlitPlanar2DirectDefault = API(BlitPlanar2DirectDefault);
 //	bi -> EnableSoftSprite = API(EnableSoftSprite);
 //	bi -> EnableSoftSpriteDefault = API(EnableSoftSpriteDefault);
-//	bi -> AllocCardMemAbs = API(AllocCardMemAbs);
-//	bi -> SetSplitPosition = API(SetSplitPosition);
-//	bi -> ReInitMemory = API(ReInitMemory);
+	bi -> AllocCardMemAbs = API(AllocCardMemAbs);
+	bi -> SetSplitPosition = API(SetSplitPosition);
+	bi -> ReInitMemory = API(ReInitMemory);
 //	bi -> Reserved2Default = API(Reserved2Default);
 //	bi -> Reserved3 = API(Reserved3);
 //	bi -> Reserved3Default = API(Reserved3Default);

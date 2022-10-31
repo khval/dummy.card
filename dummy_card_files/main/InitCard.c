@@ -22,6 +22,7 @@
 #include <exec/Interrupts.h>
 #include <proto/exec.h>
 #include <proto/dos.h>
+#include <proto/graphics.h>
 #include <libraries/dummy_card.h>
 #include <proto/dummy_card.h>
 #include <stdarg.h>
@@ -62,13 +63,14 @@
 */
 
 extern struct Library *ExecBase;
+extern struct GraphicsIFace *IGfx;
 
-struct SignalSemaphore *BoardLock;
+//struct SignalSemaphore *BoardLock;
 
 struct ChipBase chipbase;
 //struct CardBase cardbase;
 
-#define CLOCK_HZ 100000000 
+#define CLOCK_HZ 1000000000 
 
 void hard()
 {
@@ -95,13 +97,44 @@ extern void show_func(struct BoardInfo * bi);
 
 const char *name = "test dummy card";
 
+char *sem_name = "dummy card";
+
+struct BitMap *bm;
+struct BitMapExtra _BitMapExtra;
+
+void init_BitMapExtra(struct BitMapExtra *bme,struct BoardInfo * bi)
+{
+//	InitBitMap( &_bm, 8, 640, 480 );
+
+	NewMinList( &(bme -> BoardNode));
+	bme -> HashChain = NULL;
+	bme -> Match = 0xBADCAFE1;
+
+	bme -> BitMap = AllocBitMapTags( 640, 480, 8,
+				BMATags_PixelFormat, PIXF_CLUT,
+				TAG_END	 ) ;
+
+	bme -> BoardInfo = bi;
+	bme -> MemChunk = 0xBADCAFE3;
+	// bme -> RenderInfo;
+	bme -> Width = 640;
+	bme -> Height = 480;
+	bme -> Flags = 0;
+	// NEW !!!
+	bme -> BaseLevel =0;
+	bme -> CurrentLevel = 0;
+	bme -> CompanionMaster = NULL;	// think I need to set this to NULL...
+}
+
 void _dummy_card_InitCard(struct DummycardIFace *Self, struct BoardInfo * bi, char ** ToolTypes)
 {
 	int i;
 
-//	struct ExecBase *ExecBase = (struct ExecIFace *)(*(struct ExecBase **)4);
+	struct ExecBase *ExecBase = (struct ExecBase *)(*(struct ExecBase **)4);
 
 	printf("%s:%s:%d\n",__FILE__,__FUNCTION__,__LINE__);
+
+	init_BitMapExtra( &_BitMapExtra, bi );
 
 	printf("%s:%s:%d ExecBase: %08x\n",__FILE__,__FUNCTION__,__LINE__, (int) bi-> ExecBase);
 	printf("%s:%s:%d UtilBase: %08x\n",__FILE__,__FUNCTION__,__LINE__, (int) bi-> UtilBase);
@@ -110,12 +143,15 @@ void _dummy_card_InitCard(struct DummycardIFace *Self, struct BoardInfo * bi, ch
 
 	// setup init data.
 
-	bi -> BoardName = name;
-//	sprintf(bi -> VBIName,"%s",name); // not used in ZZ9000 driver.
+	bi -> BoardName = (char *) name;
+	bi -> BoardType = 14;			// set like this in ZZ9000 driver not sure why....
 
 //	bi -> CardBase = &cardbase;		// this one looks like is setup from before.
 
-	bi -> ChipBase = &chipbase;		// we can setup this... maybe not needed.
+	chipbase.ExecBase = ExecBase;
+
+	bzero(&chipbase,sizeof(chipbase));
+//	bi -> ChipBase = &chipbase;		// not sure about this one!!!		should point to a library base...
 
 //	bi -> ExecBase = ExecBase;		// this one is setup by rtg.library !!
 //	bi -> UtilBase = NULL;			// this one is setup by rtg.library !!
@@ -130,10 +166,44 @@ void _dummy_card_InitCard(struct DummycardIFace *Self, struct BoardInfo * bi, ch
 	init_interrupt( &(bi -> HardInterrupt), hard );
 	init_interrupt( &(bi -> SoftInterrupt), soft ) ;
 
-	InitSemaphore( &bi -> BoardLock );
+// this code is maybe allready setup by AmigaOS4.
+#if 0
+//	memset(&bi -> BoardLock, 0, sizeof(struct SignalSemaphore));	// doc, says clear it, first...
+//	InitSemaphore( &(bi -> BoardLock) );
+//	bi -> BoardLock.ss_Link.ln_Name = sem_name; 
+//	AddSemaphore( &(bi -> BoardLock) );
+#endif
+
 	NewMinList( &bi -> ResolutionsList );
+	NewMinList( &bi -> SpecialFeatures );
+
+	// 2 4 8 A C E 0
+	// 4 8 C 0
+
+	bi -> ModeInfo = 0xDEAD0004;
+	bi -> ViewPort = 0xDEAD0008;
+	bi -> VisibleBitMap = 0xDEAD000C;
+
+	NewMinList( &bi -> BitMapList);
+	NewMinList( &bi -> MemList);
+	NewMinList( &bi -> WaitQ);
 
 	bi -> BoardType = BT_powerfb;
+
+//	bi -> SoftVBlankPort ;
+	bi -> MouseImage = 0xDEAD0014;
+	bi -> MouseRendered = 0xDEAD0018;
+	bi -> MouseSaveBuffer = 0xDEAD001C;
+	bi -> MouseImageBuffer = 0xDEAD0020;
+	bi -> backViewPort = 0xDEAD0024;
+	bi -> backBitMap = 0xDEAD0028;
+	bi -> backExtra = 0xDEAD002C;
+	bi -> MouseChunky = 0xDEAD0030;
+
+
+	printf("bi -> BitMapExtra: %08x\n", (unsigned int) bi -> BitMapExtra);
+
+	bi -> BitMapExtra = &_BitMapExtra;
 
 	bi -> PaletteChipType = 0;
 	bi -> GraphicsControllerType = 0;
@@ -157,7 +227,7 @@ void _dummy_card_InitCard(struct DummycardIFace *Self, struct BoardInfo * bi, ch
 
 	// setup functions.
 
-//	show_func(bi);
+	show_func(bi);
 
 	init_api( bi );
 

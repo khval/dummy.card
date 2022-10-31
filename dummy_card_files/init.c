@@ -47,6 +47,8 @@ struct DOSIFace *IDOS = NULL;
 struct Library *NewLibBase = NULL;
 struct Library *DOSBase = NULL;
 
+struct GraphicsIFace *IGraphics = NULL;
+struct Library *GfxBase = NULL;
 
 /*
  * The system (and compiler) rely on a symbol named _start which marks
@@ -106,6 +108,7 @@ void close_libs()
 	struct ExecIFace *IExec = (struct ExecIFace *)(*(struct ExecBase **)4)->MainInterface;
 	close_lib( DOSBase, IDOS);
 	close_lib( NewLibBase, INewlib);
+	close_lib( GfxBase, IGraphics);
 }
 
 
@@ -172,6 +175,7 @@ BOOL init()
 {
 	if ( ! open_lib( "dos.library", 53L , "main", 1, &DOSBase, (struct Interface **) &IDOS  ) ) return FALSE;
 	if ( ! open_lib( "newlib.library", 53L , "main", 1, &NewLibBase, (struct Interface **) &INewlib  ) ) return FALSE;
+	if ( ! open_lib( "graphics.library", 53L , "main", 1, &GfxBase, (struct Interface **) &IGraphics  ) ) return FALSE;
 
 	return TRUE;
 }
